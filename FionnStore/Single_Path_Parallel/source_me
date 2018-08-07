@@ -1,0 +1,3 @@
+module load libs gsl/intel/2.3
+module load dev intel/2017-u3
+module load dev gcc/6.3.0

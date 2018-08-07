@@ -1,0 +1,6 @@
+Modules;
+$ module load libs gsl/intel/2.3
+$ module load dev intel/2017-u3
+
+Compile command;
+$ icc -o run main.cpp density.cpp functions.cpp random.cpp -lgsl -lgslcblas -lm -qopenmp

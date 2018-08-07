@@ -1,0 +1,28 @@
+-----Setup------
+
+Modules required;
+$ module load dev
+$ module load libs
+$ module load libs gsl/intel/2.3
+$ module load dev intel/2017-u3
+(To quickly load these modules just type 'source source_me' (don't include the quotation marks))
+
+Compile command;
+$ icc -o run main.cpp density.cpp functions.cpp random.cpp -lgsl -lgslcblas -lm -qopenmp
+
+To execute the code;
+$ export OMP_NUM_THREADS=2; ./run
+(Set OMP_NUM_THREADS equal to however many threads you want to use)
+("run" is the name of the executable. i.e: whatever word you put after '-o' in the compile command)
+
+
+
+-----Comments-----
+
+
+
+-----Submitting Jobs-----
+
+- Edit the 'sub.pbs' file to include your executable, the required modules, an email (optional -> will send updates on job status)
+- Type "qsub sub.pbs" to submit the job
+- To view the job status type "qshow"
