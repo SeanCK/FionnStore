@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -N QC_test96
+#PBS -A ndphy086c
+#PBS -j oe
+#PBS -m bae
+#PBS -M 14301746@ucdconnect.ie
+#PBS -l nodes=4:ppn=24
+#PBS -l walltime=00:10:00
+
+cd $PBS_O_WORKDIR
+
+module load dev intel/2017-u3
+module load libs gsl/intel/2.3
+
+mpirun -np 96 mpi.exe
+
